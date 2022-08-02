@@ -24,6 +24,8 @@ $ python3 -m venv --without-pip virtual
 $ source virtual/bin/activate
 $ curl https://bootstrap.pypa.io/get-pip.py | python
 ````
+When installing this template, the **envs** and **flaskenv** should be put into consideration. ie 
+- When you want to run the flask app, make sure you change the **envs** and **flaskenv** to  **.env** and **.flaskenv** and vice versa when you want to commit a change to your repository.
 
 ### Requirements
 

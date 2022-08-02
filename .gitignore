@@ -5,6 +5,9 @@ __pycache__/
 
 virtual/
 
+.env
+.flaskenv
+
 # C extensions
 *.so
 

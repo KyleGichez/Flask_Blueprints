@@ -1,7 +1,6 @@
-from flask import Blueprint, render_template, make_response, session, request
+from flask import render_template, make_response, session, request
 
-auth = Blueprint('auth', __name__, template_folder = 'templates')
-
+from . import auth
 
 @auth.route('/')
 def login():
