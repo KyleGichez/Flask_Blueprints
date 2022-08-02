@@ -14,7 +14,7 @@ This is a software program built in flask. It enables you to learn how to develo
 ### Installation
 To install this flask application, clone this repository into your local working environment and open it in your favorite IDE.
 ````clone repository
-git clone  https://github.com/KyleGichez/Movie_App.git
+git clone  https://github.com/KyleGichez/Flask_Blueprints.git
 ````
 Also, you can choose to download this project to your local working environment as a zip folder when you click the green code button in this repository.
 
