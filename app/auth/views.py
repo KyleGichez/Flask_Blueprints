@@ -5,6 +5,7 @@ from . import auth
 @auth.route('/')
 def login():
     content = dict()
+    content['title'] = 'Gichez D Man'
     content['first_name'] = 'Sexy Ms Dollar Baby'
     content['email'] = 'kylegichez@gmail.com'
     content['amount'] = '$15,000'
