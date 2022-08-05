@@ -31,7 +31,10 @@ def register_blueprints(app):
     Register blueprint
     """
     from .auth import auth as auth_bp
+    from .auth import movies as movies_bp
+
     app.register_blueprint(auth_bp)
+    app.register_blueprint(movies_bp)
 
 def create_app(config_name):
     """Create app"""
