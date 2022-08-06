@@ -9,6 +9,7 @@ class Config:
     """app configuration"""
     TESTING = False
     SECRET_KEY = hashlib.sha512(bytes(env.str('S_K'), 'utf-8')).hexdigest()
+    MOVIE_BASE_URL = env.str('MOVIE_BASE_URL')
 
 
 class ProdConfig(Config):
