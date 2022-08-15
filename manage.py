@@ -2,7 +2,7 @@ from app import create_app
 
 def run_app():
     """Run the development server"""
-    environment_config = 'dev_config'
+    environment_config = 'development'
     app_instance = create_app(environment_config)
     app_instance.run()
 

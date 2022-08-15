@@ -34,7 +34,7 @@ class TestConfig(Config):
 
 """config_options as a dictionary object"""
 config_options = dict(
-    dev_config = DevConfig(),
-    prod_config = ProdConfig(),
-    test_config = TestConfig()
+    development= DevConfig(),
+    production = ProdConfig(),
+    testing = TestConfig()
 )
