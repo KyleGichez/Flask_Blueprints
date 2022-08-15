@@ -1,24 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     {% if title %}
-    <title> {{content.title}} </title>
+    <title> {{ title }} </title>
     {% else %}
     <title>Flask Blueprints and Views</title>
     {% endif %}
 </head>
+
 <body>
-    <h1>Hey, your favorite movie title is: {{ id }}</h1>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quae necessitatibus
-        impedit debitis consequuntur! Voluptatibus molestiae animi delectus commodi sed voluptates suscipit repellat. 
-        Quaerat nostrum excepturi reprehenderit magnam labore nesciunt!
-        Quaerat nostrum inventore ad dolorum pariatur autem praesentium consequuntur
-        eius nihil tenetur rem consequatur accusantium nesciunt iure molestias commodi,
-        ipsam id sint aperiam veniam vero illum, asperiores, totam aspernatur! Deleniti.
-    </p>
+    <h3>Popular Movies</h3>
+    {% if popular %}
+    <!-- <div class="container">
+        <div class="row">
+            {% for movie in popular %}
+            <div class="card" style="max-width: 350px;">
+                <img src="{{ movie.poster_path }}" alt="" class="card-img-top">
+                <div class="card-body">
+                    <div class="card-title">{{ movie.title }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div> -->
+    <div class="container px-4 py-5">
+        <h2 class="pb-2 border-bottom">Popular Movies</h2>
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            {% for movie in popular %}
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="background-image: url('{{ movie.poster_path }}');">
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ movie.title }}</h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="https://github.com/twbs.png" alt="{{ movie.title }}" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#geo-fill"></use>
+                                </svg>
+                                <small>Pakistan</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em">
+                                    <use xlink:href="#calendar3"></use>
+                                </svg>
+                                <small>4d</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% else %}
+    <p>No popular movies.</p>
+    {% endif %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
