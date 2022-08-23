@@ -1,6 +1,6 @@
 from webbrowser import get
 from flask import render_template, make_response, session, request
-from ..request import get_movies
+from ..request import get_movies, get_movie
 
 from . import main
 
@@ -28,7 +28,7 @@ def movies():
     # context['popular_movies'] = get_movies('popular')
     # context['title'] = 'Welcome to the best movie review website'
 
-    template = render_template('movies/movie.html', title = title, popular = popular_movies, upcoming = upcoming_movies, showing = now_showing)
+    template = render_template('movies/movies.html', title = title, popular = popular_movies, upcoming = upcoming_movies, showing = now_showing)
     response = make_response(template)
     return response
 
@@ -36,13 +36,13 @@ def movies():
 
 @main.route('/movie/<id>')
 def movie(id):
-    popular_movies = get_movies('popular')
-    print(popular_movies)
+    movie = get_movie(id)
+    print(movie)
     title = 'Welcome to the best movie review website'
     # context = dict()
     # context['popular_movies'] = get_movies('popular')
     # context['title'] = 'Welcome to the best movie review website'
 
-    template = render_template('movies/movie.html', title = title, popular = popular_movies)
+    template = render_template('movies/movie.html', title = title, movie = movie)
     response = make_response(template)
     return response

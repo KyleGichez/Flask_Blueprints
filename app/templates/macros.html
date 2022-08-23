@@ -4,8 +4,19 @@
     <div class="card" style="max-width: 350px;">
         <img src="{{ movie.poster_path }}" alt="{{movie.title}}" class="card-img-top">
         <div class="card-body">
+            <a href="{{ url_for('main.movie', id=movie.id) }}" class="stretched-link"></a>
             <div class="card-title">{{ movie.title }}</div>
         </div>
     </div>
     {% endfor %} 
 {% endmacro %}   
+
+{% macro displayMovie(movie) %}
+<div class="card" style="max-width: 350px;">
+    <img src="{{ movie.poster_path }}" alt="{{movie.title}}" class="card-img-top">
+    <div class="card-body">
+        <a href="{{ url_for('main.movie', id=movie.id) }}" class="stretched-link"></a>
+        <div class="card-title">{{ movie.title }}</div>
+    </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+{% block body %}
+ <!--Display all movie categories-->
+ <div class="container">
+    <h2 class="pb-2 border-bottom">Popular Movies</h2>
+    <div class="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
+        {{ macro.displayMovieList(popular) }}
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="pb-2 border-bottom">Upcoming Movies</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        {{ macro.displayMovieList(upcoming) }}
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="pb-2 border-bottom">Now Showing Movies</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        {{ macro.displayMovieList(showing) }}
+    </div>
+</div>
+{% endblock %}
