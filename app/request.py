@@ -23,8 +23,7 @@ def get_movies(category):
     return movie_results
 
 def process_results(movie_list):
-    """
-    """
+    """Process the movie review"""
     movie_results = []
 
     for movie_item in movie_list:

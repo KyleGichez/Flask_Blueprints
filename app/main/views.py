@@ -20,15 +20,18 @@ def login():
 @main.route('/movies')
 def movies():
     popular_movies = get_movies('popular')
+    upcoming_movies = get_movies('upcoming')
+    now_showing = get_movies('now_showing')
     print(popular_movies)
     title = 'Welcome to the best movie review website'
     # context = dict()
     # context['popular_movies'] = get_movies('popular')
     # context['title'] = 'Welcome to the best movie review website'
 
-    template = render_template('movies/movie.html', title = title, popular = popular_movies)
+    template = render_template('movies/movie.html', title = title, popular = popular_movies, upcoming = upcoming_movies)
     response = make_response(template)
     return response
+
 
 
 @main.route('/movie/<id>')
