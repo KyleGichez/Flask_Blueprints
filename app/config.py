@@ -10,9 +10,8 @@ class Config:
     TESTING = False
     SECRET_KEY = hashlib.sha512(bytes(env.str('S_K'), 'utf-8')).hexdigest()
     MOVIE_API_KEY = env.str('MOVIE_API_KEY')
-    MOVIE_API_VERSION = env.int('MOVIE_API_VERSION')
     MOVIE_API_PAYLOAD = f'?api_key={MOVIE_API_KEY}&language=en-US'
-    MOVIE_API_BASE_URL = f'https://api.themoviedb.org/{MOVIE_API_VERSION}/movie'
+    MOVIE_API_BASE_URL = f'https://api.themoviedb.org/3/movie'
     # MOVIE_API_BASE_URL = f'https://api.themoviedb.org/3/movie/{}?api_key={MOVIE_API_KEY}'
 
 
