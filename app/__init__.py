@@ -5,7 +5,7 @@ import logging, sys
 
 from .config import config_options
 from .extensions import register_extensions
-from app import error
+from app.main import error
 
 def configure_logger(app):
     """Configure loggers."""
